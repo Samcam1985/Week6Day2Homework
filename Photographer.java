@@ -15,4 +15,7 @@ public String getName() {
   return this.name;
 }
 
+public int equipmentCount(){
+  return this.cameras.size();
+}
 }

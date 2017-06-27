@@ -18,4 +18,8 @@ public void hasName(){
   assertEquals("Sam", photographer.getName());
 }
 
+@Test
+public void camerasStartsEmpty(){
+  assertEquals(0, photographer.equipmentCount());
+}
 }
