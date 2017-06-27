@@ -22,4 +22,17 @@ public void hasName(){
 public void camerasStartsEmpty(){
   assertEquals(0, photographer.equipmentCount());
 }
+
+@Test
+public void canAddCamera(){
+  photographer.addCamera(camera);
+  assertEquals(1, photographer.equipmentCount());
+}
+
+@Test
+public void canRemoveCamera(){
+  photographer.addCamera(camera);
+  photographer.removeCamera();
+  assertEquals(0, photographer.equipmentCount());
+}
 }
