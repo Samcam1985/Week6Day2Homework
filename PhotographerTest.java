@@ -4,12 +4,16 @@ import org.junit.*;
 public class PhotographerTest{
   Photographer photographer;
   Camera camera;
+  DigitalCamera digitalCamera;
+  AnalogCamera analogCamera;
 
 
 @Before
 public void before() {
 photographer = new Photographer("Sam");
 camera = new Camera();
+digitalCamera = new DigitalCamera();
+analogCamera = new AnalogCamera();
 
 }
 
@@ -35,4 +39,13 @@ public void canRemoveCamera(){
   photographer.removeCamera();
   assertEquals(0, photographer.equipmentCount());
 }
+
+@Test
+public void canGetAllCameraDetails(){
+  photographer.addCamera(digitalCamera);
+  photographer.addCamera(analogCamera);
+  cameraDetails = "Nikon Coolpix, L340, Zoom, Black Nikon EM, 400px, Black";
+  assertEquals(cameraDetails, photographer.allCameraDetails);
 }
+}
+
